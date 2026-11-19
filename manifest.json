@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "成都职培网院自动刷课",
+  "version": "1.0.0",
+  "description": "自动播放成都职业培训网络学院视频，播完自动切换下一节",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": ["https://www.wlxy.org.cn/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "自动刷课"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.wlxy.org.cn/pages/train/play*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
